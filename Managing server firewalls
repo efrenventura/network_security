@@ -1,0 +1,26 @@
+-- Netfilter is the primary component in Red Hat Enterprise Linux 8 firewalls.
+Is a framework for network traffic operations such as packet filtering, network address translation and port translation
+Any incoming, outgoing, or forwarded network packet can be inspected, modified, dropped, or routed programmatically before reaching 
+user space components or applications.
+
+-- Nftables is an enhanced version of Netfliter.
+The advanteges of Nfstables is faster packet processing, faster ruleset updates, and simultaneous IPv4 and IPv6 processing from the
+same rules.
+Another major difference between nftables and the original netfilter are their interfaces. Netfilter uses multiple frameworks
+already deprecated and Nftables uses he single nft user-space utility, allowing all protocol management to occur through a single
+interface, eliminating historical contention caused by diverse front ends and multiple netfilter interfaces.
+
+-- Firewalld is a dynamic firewall manager, a front end to the nftables framework using the nft command.
+Firewalld is not included in a minimal install but is included in base installation.
+With Firewalld firewall management is simplified by classifying all network traffic into zones.
+By default Public Zone is the predetermined zone for Firewalld but can be changed as needed.
+Zones: trusted, home, internal, work, public, external, dmz, block, drop
+Pre-defined Services: ssh, dhcpv6-client, ipp-client, samba-client, mdns.
+
+-- Configuring the firewall
+• Directly edit configuration files in /etc/firewalld/
+• The Web Console graphical interface
+• The firewall-cmd command-line tool
+
+
+
